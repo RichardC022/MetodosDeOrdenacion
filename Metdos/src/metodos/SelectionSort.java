@@ -8,6 +8,13 @@ public final class SelectionSort {
         int n = a.length; // Tamaño del arreglo
         int swaps = 0; // Contador
 
+        //si el arreglo esta vacio muestra:
+        if (a == null || a.length <= 1) {
+            System.out.println("Array ya ordenado o vacío");
+            return;
+        }
+
+
         for (int i = 0; i < n - 1; i++) {
             int minimo = i; // Toma al valor en i como minimo
 

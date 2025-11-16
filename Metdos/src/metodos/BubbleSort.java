@@ -15,7 +15,7 @@ public class BubbleSort {
                 for (int j = 0; j < n - i - 1; j++) {
                     //compara el elemento actual si es mayor al siguiente
                     if (a[j] > a[j + 1]) {
-                        //realiza el orden cambaindo los elementos
+                        //realiza el orden cambiando los elementos
                         int temp = a[j];
                         a[j] = a[j + 1];
                         a[j + 1] = temp;

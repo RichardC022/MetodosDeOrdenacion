@@ -55,6 +55,7 @@ public class InsertionSort {
             }
 
             System.out.println("Array final: " + arrayToString(a));
+            //presentar swaps
             System.out.println("Total swaps: " + swaps);
         }
 
