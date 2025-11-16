@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1" date="1763317243425" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 16/11/2025 13:20 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Metdos/metodos/SelectionSort.class" />
+    <option name="AFTER_PATH" value="out/production/Metdos/metodos/SelectionSort.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/SelectionSort.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Metdos/Servicios/SortingUtils.class" />
+    <option name="AFTER_PATH" value="out/production/Metdos/Servicios/SortingUtils.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/SortingUtils.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Metdos/metodos/InsertionSort.class" />
+    <option name="AFTER_PATH" value="out/production/Metdos/metodos/InsertionSort.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/InsertionSort.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Metdos/Servicios/SortingDemo.class" />
+    <option name="AFTER_PATH" value="out/production/Metdos/Servicios/SortingDemo.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/SortingDemo.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Metdos/metodos/BubbleSort.class" />
+    <option name="AFTER_PATH" value="out/production/Metdos/metodos/BubbleSort.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_11_2025_13_20_[Changes]1/BubbleSort.class" />
+  </binary>
+</changelist>

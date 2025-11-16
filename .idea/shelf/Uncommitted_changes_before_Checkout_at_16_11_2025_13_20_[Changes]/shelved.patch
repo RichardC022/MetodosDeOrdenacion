@@ -1,0 +1,296 @@
+Index: Metdos/src/metodos/BubbleSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package metodos;\r\n\r\npublic class BubbleSort {\r\n        public static void sort(int[] a) {\r\n            //si el arrego esta vacio o solo tiene un valor\r\n            //no hace nigun ordenamiento\r\n            if (a == null || a.length <= 1) {\r\n                return;\r\n            }\r\n            int n = a.length;\r\n            boolean huboIntercambio;\r\n\r\n            for (int i = 0; i < n - 1; i++) {\r\n                huboIntercambio = false;\r\n                for (int j = 0; j < n - i - 1; j++) {\r\n                    //compara el elemento actual si es mayor al siguiente\r\n                    if (a[j] > a[j + 1]) {\r\n                        //realiza el orden cambaindo los elementos\r\n                        int temp = a[j];\r\n                        a[j] = a[j + 1];\r\n                        a[j + 1] = temp;\r\n                        huboIntercambio = true;\r\n                    }\r\n                }\r\n                //si no hay cambios es porque ya esta ordenado\r\n                if (!huboIntercambio) {\r\n                    break;\r\n                }\r\n            }\r\n        }\r\n\r\n        public static void sort(int[] a, boolean trace) {\r\n            if (!trace) {\r\n                sort(a);\r\n                return;\r\n            }\r\n            //si el arreglo esta vacio muestra:\r\n            if (a == null || a.length <= 1) {\r\n                System.out.println(\"Array ya ordenado o vacío\");\r\n                return;\r\n            }\r\n\r\n            //muestra como inicia\r\n            System.out.println(\"bubble sort\");\r\n            System.out.println(\"Array inicial: \" + arrayToString(a));\r\n\r\n            int n = a.length;\r\n            boolean huboIntercambio;\r\n            int pasada = 0;\r\n\r\n            for (int i = 0; i < n - 1; i++) {\r\n                huboIntercambio = false;\r\n                pasada++;\r\n\r\n                for (int j = 0; j < n - i - 1; j++) {\r\n                    if (a[j] > a[j + 1]) {\r\n                        int temp = a[j];\r\n                        a[j] = a[j + 1];\r\n                        a[j + 1] = temp;\r\n                        huboIntercambio = true;\r\n                    }\r\n                }\r\n                //va mostrando como esta haciendo el ordenamiento\r\n                System.out.println(\"pasada \" + pasada + \": \" + arrayToString(a));\r\n                if (!huboIntercambio) {\r\n                    System.out.println(\"array ya ordenado\");\r\n                    break;\r\n                }\r\n            }\r\n\r\n            System.out.println(\"array final: \" + arrayToString(a));\r\n        }\r\n\r\n        private static String arrayToString(int[] a) {\r\n            return java.util.Arrays.toString(a);\r\n        }\r\n\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Metdos/src/metodos/BubbleSort.java b/Metdos/src/metodos/BubbleSort.java
+--- a/Metdos/src/metodos/BubbleSort.java	(revision b4232b91a5ae4fc1d0a7636338784e45eb1921f8)
++++ b/Metdos/src/metodos/BubbleSort.java	(date 1763316894726)
+@@ -40,13 +40,10 @@
+                 return;
+             }
+ 
+-            //muestra como inicia
+-            System.out.println("bubble sort");
+-            System.out.println("Array inicial: " + arrayToString(a));
+-
+             int n = a.length;
+             boolean huboIntercambio;
+             int pasada = 0;
++            int swaps = 0;
+ 
+             for (int i = 0; i < n - 1; i++) {
+                 huboIntercambio = false;
+@@ -57,18 +54,21 @@
+                         int temp = a[j];
+                         a[j] = a[j + 1];
+                         a[j + 1] = temp;
++                        swaps++;
+                         huboIntercambio = true;
++
+                     }
+                 }
+                 //va mostrando como esta haciendo el ordenamiento
+                 System.out.println("pasada " + pasada + ": " + arrayToString(a));
+                 if (!huboIntercambio) {
+-                    System.out.println("array ya ordenado");
++                    System.out.println("Array ya ordenado");
+                     break;
+                 }
+             }
+ 
+             System.out.println("array final: " + arrayToString(a));
++            System.out.println("Total swaps: " + swaps);
+         }
+ 
+         private static String arrayToString(int[] a) {
+Index: Metdos/src/Servicios/SortingDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Servicios;\r\n\r\nimport metodos.InsertionSort;\r\nimport metodos.SelectionSort;\r\nimport metodos.BubbleSort;\r\n\r\nimport java.util.Arrays;\r\n\r\npublic class SortingDemo {\r\n        public static void main(String[] args) {\r\n            // Datasets específicos del taller\r\n            int[][] datasets = {\r\n                    {8, 3, 6, 3, 9},  // A\r\n                    {5, 4, 3, 2, 1},  // B\r\n                    {1, 2, 3, 4, 5},  // C\r\n                    {2, 2, 2, 2},     // D\r\n                    {9, 1, 8, 2}      // E\r\n            };\r\n\r\n            System.out.println(\"=== metodo insertion sort ===\");\r\n            probarInsertionSort(datasets);\r\n\r\n            System.out.println(\"\\n=== metodo bubble sort ===\");\r\n            probarBubbleSort(datasets);\r\n\r\n            System.out.println(\"\\n=== metodo selection sort ===\");\r\n            probarSelectionSort(datasets);\r\n\r\n            System.out.println(\"\\n=== comparacion de los resultados ===\");\r\n            compararResultados(datasets);\r\n        }\r\n\r\n        public static void probarInsertionSort(int[][] datasets) {\r\n            for (int i = 0; i < datasets.length; i++) {\r\n                int[] copia = SortingUtils.copiarArray(datasets[i]);\r\n                System.out.println(\"\\nDataset \" + (char)('A' + i) + \":\");\r\n                SortingUtils.imprimir(\"Original: \", datasets[i]);\r\n                InsertionSort.sort(copia, true);\r\n            }\r\n        }\r\n\r\n        public static void probarBubbleSort(int[][] datasets) {\r\n            for (int i = 0; i < datasets.length; i++) {\r\n                int[] copia = SortingUtils.copiarArray(datasets[i]);\r\n                System.out.println(\"\\nDataset \" + (char)('A' + i) + \":\");\r\n                SortingUtils.imprimir(\"Original: \", datasets[i]);\r\n                BubbleSort.sort(copia, true);\r\n            }\r\n        }\r\n\r\n        public static void probarSelectionSort(int[][] datasets) {\r\n            for (int i = 0; i < datasets.length; i++) {\r\n                int[] copia = SortingUtils.copiarArray(datasets[i]);\r\n                System.out.println(\"\\nDataset \" + (char)('A' + i) + \":\");\r\n                SortingUtils.imprimir(\"Original: \", datasets[i]);\r\n                SelectionSort.sort(copia, true);\r\n            }\r\n        }\r\n\r\n        public static void compararResultados(int[][] datasets) {\r\n            for (int i = 0; i < datasets.length; i++) {\r\n                int[] copiaInsertion = SortingUtils.copiarArray(datasets[i]);\r\n                int[] copiaBubble = SortingUtils.copiarArray(datasets[i]);\r\n                int[] copiaSelection = SortingUtils.copiarArray(datasets[i]);\r\n\r\n                InsertionSort.sort(copiaInsertion);\r\n                BubbleSort.sort(copiaBubble);\r\n                SelectionSort.sort(copiaSelection);\r\n\r\n                System.out.println(\"\\nDataset \" + (char)('A' + i) + \":\");\r\n                SortingUtils.imprimir(\"original:  \", datasets[i]);\r\n                SortingUtils.imprimir(\"insertion: \", copiaInsertion);\r\n                SortingUtils.imprimir(\"bubble:    \", copiaBubble);\r\n                SortingUtils.imprimir(\"selection: \", copiaSelection);\r\n\r\n                boolean todosIguales = SortingUtils.sonIguales(copiaInsertion, copiaBubble) &&\r\n                        SortingUtils.sonIguales(copiaBubble, copiaSelection);\r\n\r\n                boolean correctamenteOrdenado = SortingUtils.estaOrdenado(copiaInsertion);\r\n\r\n                if (todosIguales && correctamenteOrdenado) {\r\n                    System.out.println(\"todos son iguales y estan ordenados\");\r\n                } else {\r\n                    System.out.println(\"algo salio mal\");\r\n                }\r\n            }\r\n        }\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Metdos/src/Servicios/SortingDemo.java b/Metdos/src/Servicios/SortingDemo.java
+--- a/Metdos/src/Servicios/SortingDemo.java	(revision b4232b91a5ae4fc1d0a7636338784e45eb1921f8)
++++ b/Metdos/src/Servicios/SortingDemo.java	(date 1763316894695)
+@@ -4,11 +4,9 @@
+ import metodos.SelectionSort;
+ import metodos.BubbleSort;
+ 
+-import java.util.Arrays;
+-
+ public class SortingDemo {
+         public static void main(String[] args) {
+-            // Datasets específicos del taller
++            // Datasets especificos del taller
+             int[][] datasets = {
+                     {8, 3, 6, 3, 9},  // A
+                     {5, 4, 3, 2, 1},  // B
+@@ -17,16 +15,16 @@
+                     {9, 1, 8, 2}      // E
+             };
+ 
+-            System.out.println("=== metodo insertion sort ===");
++            System.out.println("Método Selection Sort ");
++            probarSelectionSort(datasets);
++
++            System.out.println("\nMétodo Insertion Sort ");
+             probarInsertionSort(datasets);
+ 
+-            System.out.println("\n=== metodo bubble sort ===");
++            System.out.println("\nMétodo Bubble Sort ");
+             probarBubbleSort(datasets);
+ 
+-            System.out.println("\n=== metodo selection sort ===");
+-            probarSelectionSort(datasets);
+-
+-            System.out.println("\n=== comparacion de los resultados ===");
++            System.out.println("\nComparación de los resultados ");
+             compararResultados(datasets);
+         }
+ 
+@@ -34,7 +32,7 @@
+             for (int i = 0; i < datasets.length; i++) {
+                 int[] copia = SortingUtils.copiarArray(datasets[i]);
+                 System.out.println("\nDataset " + (char)('A' + i) + ":");
+-                SortingUtils.imprimir("Original: ", datasets[i]);
++                SortingUtils.imprimir("Array original: ", datasets[i]);
+                 InsertionSort.sort(copia, true);
+             }
+         }
+@@ -43,7 +41,7 @@
+             for (int i = 0; i < datasets.length; i++) {
+                 int[] copia = SortingUtils.copiarArray(datasets[i]);
+                 System.out.println("\nDataset " + (char)('A' + i) + ":");
+-                SortingUtils.imprimir("Original: ", datasets[i]);
++                SortingUtils.imprimir("Array original: ", datasets[i]);
+                 BubbleSort.sort(copia, true);
+             }
+         }
+@@ -52,7 +50,7 @@
+             for (int i = 0; i < datasets.length; i++) {
+                 int[] copia = SortingUtils.copiarArray(datasets[i]);
+                 System.out.println("\nDataset " + (char)('A' + i) + ":");
+-                SortingUtils.imprimir("Original: ", datasets[i]);
++                SortingUtils.imprimir("Array original: ", datasets[i]);
+                 SelectionSort.sort(copia, true);
+             }
+         }
+@@ -68,10 +66,10 @@
+                 SelectionSort.sort(copiaSelection);
+ 
+                 System.out.println("\nDataset " + (char)('A' + i) + ":");
+-                SortingUtils.imprimir("original:  ", datasets[i]);
+-                SortingUtils.imprimir("insertion: ", copiaInsertion);
+-                SortingUtils.imprimir("bubble:    ", copiaBubble);
+-                SortingUtils.imprimir("selection: ", copiaSelection);
++                SortingUtils.imprimir("Original:  ", datasets[i]);
++                SortingUtils.imprimir("Selection: ", copiaSelection);
++                SortingUtils.imprimir("Insertion: ", copiaInsertion);
++                SortingUtils.imprimir("Bubble:    ", copiaBubble);
+ 
+                 boolean todosIguales = SortingUtils.sonIguales(copiaInsertion, copiaBubble) &&
+                         SortingUtils.sonIguales(copiaBubble, copiaSelection);
+@@ -79,9 +77,9 @@
+                 boolean correctamenteOrdenado = SortingUtils.estaOrdenado(copiaInsertion);
+ 
+                 if (todosIguales && correctamenteOrdenado) {
+-                    System.out.println("todos son iguales y estan ordenados");
++                    System.out.println("Todos son iguales y estan ordenados");
+                 } else {
+-                    System.out.println("algo salio mal");
++                    System.out.println("Algo salió mal");
+                 }
+             }
+         }
+Index: Metdos/src/metodos/SelectionSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package metodos;\r\n\r\npublic final class SelectionSort {\r\n    public static void sort(int[] a) {\r\n        sort(a, false);\r\n    }\r\n    public static void sort(int[] a, boolean trace) {\r\n        int n = a.length; // Tamaño del arreglo\r\n        int swaps = 0; // Contador\r\n\r\n        for (int i = 0; i < n - 1; i++) {\r\n            int minimo = i; // Toma al valor en i como minimo\r\n\r\n            // Busca el valor minimo\r\n            for (int j = i + 1; j < n; j++) {\r\n                if (a[j] < a[minimo]) {\r\n                    minimo = j; //Nuevo minimo\r\n                }\r\n            }\r\n            //Compara y reorganiza\r\n            if (minimo != i) {\r\n                 int temp = a[i];\r\n                 a[i] = a[minimo];\r\n                 a[minimo] = temp;\r\n                  swaps++;\r\n            }\r\n\r\n             if (trace) {\r\n            System.out.println(\"\\nIteración #\" + (i+1) );\r\n            imprime(a);\r\n            }\r\n        }\r\n\r\n        if(trace){\r\n             System.out.println(\"\\nTotal Swaps: \" + swaps);\r\n        }\r\n    }\r\n    private static void imprime(int[] a) {\r\n        for(int n : a) System.out.print(n + \" \");\r\n        System.out.println();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Metdos/src/metodos/SelectionSort.java b/Metdos/src/metodos/SelectionSort.java
+--- a/Metdos/src/metodos/SelectionSort.java	(revision b4232b91a5ae4fc1d0a7636338784e45eb1921f8)
++++ b/Metdos/src/metodos/SelectionSort.java	(date 1763316118403)
+@@ -4,6 +4,7 @@
+     public static void sort(int[] a) {
+         sort(a, false);
+     }
++
+     public static void sort(int[] a, boolean trace) {
+         int n = a.length; // Tamaño del arreglo
+         int swaps = 0; // Contador
+@@ -17,26 +18,40 @@
+                     minimo = j; //Nuevo minimo
+                 }
+             }
++
++            if (trace) {
++                System.out.println("Iteración #" + (i + 1) + ": insertando " + a[minimo]);
++            }
++
+             //Compara y reorganiza
+             if (minimo != i) {
+-                 int temp = a[i];
+-                 a[i] = a[minimo];
+-                 a[minimo] = temp;
+-                  swaps++;
++                int temp = a[i];
++                a[i] = a[minimo];
++                a[minimo] = temp;
++                swaps++;
+             }
+ 
+-             if (trace) {
+-            System.out.println("\nIteración #" + (i+1) );
+-            imprime(a);
++            if (trace) {
++                System.out.println("Salida: " + arrayToString(a));
+             }
+         }
+ 
+-        if(trace){
+-             System.out.println("\nTotal Swaps: " + swaps);
++        if (trace) {
++            System.out.println("Array final: " + java.util.Arrays.toString(a));
++            System.out.println("Total Swaps: " + swaps);
+         }
+     }
+-    private static void imprime(int[] a) {
+-        for(int n : a) System.out.print(n + " ");
+-        System.out.println();
++
++    // Para mostrar el arreglo de mejor forma
++    private static String arrayToString(int[] a) {
++        StringBuilder sb = new StringBuilder("[");
++        for (int i = 0; i < a.length; i++) {
++            sb.append(a[i]);
++            if (i < a.length - 1) {
++                sb.append(", ");
++            }
++        }
++        sb.append("]");
++        return sb.toString();
+     }
+ }
+Index: Metdos/src/metodos/InsertionSort.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package metodos;\r\n\r\nimport java.util.Arrays;\r\n\r\npublic class InsertionSort {\r\n        public static void sort(int[] a) {\r\n            //si el arrego esta vacio o solo tiene un valor\r\n            //no hace nigun ordenamiento\r\n            if (a == null || a.length <= 1) {\r\n                return;\r\n            }\r\n\r\n            for (int i = 1; i < a.length; i++) {\r\n                //guarda el valor que se va a insertar\r\n                int valorActual = a[i];\r\n                //empezamos a comparar hacia atrás\r\n                int posicion = i - 1;\r\n\r\n                //va moviendo los valores mayores hacia la derecha\r\n                while (posicion >= 0 && a[posicion] > valorActual) {\r\n                    a[posicion + 1] = a[posicion];\r\n                    posicion--;\r\n                }\r\n                //inserta el valor en la posicion correcta\r\n                a[posicion + 1] = valorActual;\r\n            }\r\n        }\r\n        public static void sort(int[] a, boolean trace) {\r\n            if (!trace) {\r\n                sort(a);\r\n                return;\r\n            }\r\n\r\n            if (a == null || a.length <= 1) {\r\n                System.out.println(\"Array ya ordenado o vacío\");\r\n                return;\r\n            }\r\n\r\n            System.out.println(\"insertion sort\");\r\n            System.out.println(\"Array inicial: \" + arrayToString(a));\r\n\r\n            for (int i = 1; i < a.length; i++) {\r\n                int valorActual = a[i];\r\n                int posicion = i - 1;\r\n\r\n                System.out.println(\"iteración \" + i + \": insertando \" + valorActual);\r\n\r\n                while (posicion >= 0 && a[posicion] > valorActual) {\r\n                    a[posicion + 1] = a[posicion];\r\n                    posicion--;\r\n                }\r\n\r\n                a[posicion + 1] = valorActual;\r\n                System.out.println(\"luego de insertar: \" + arrayToString(a));\r\n            }\r\n\r\n            System.out.println(\"Array final: \" + arrayToString(a));\r\n        }\r\n\r\n        // para mostrar el arreglo de mejor forma\r\n        private static String arrayToString(int[] a) {\r\n            StringBuilder sb = new StringBuilder(\"[\");\r\n            for (int i = 0; i < a.length; i++) {\r\n                sb.append(a[i]);\r\n                if (i < a.length - 1) {\r\n                    sb.append(\", \");\r\n                }\r\n            }\r\n            sb.append(\"]\");\r\n            return sb.toString();\r\n        }\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Metdos/src/metodos/InsertionSort.java b/Metdos/src/metodos/InsertionSort.java
+--- a/Metdos/src/metodos/InsertionSort.java	(revision b4232b91a5ae4fc1d0a7636338784e45eb1921f8)
++++ b/Metdos/src/metodos/InsertionSort.java	(date 1763316118382)
+@@ -36,25 +36,26 @@
+                 return;
+             }
+ 
+-            System.out.println("insertion sort");
+-            System.out.println("Array inicial: " + arrayToString(a));
++            int swaps = 0;
+ 
+             for (int i = 1; i < a.length; i++) {
+                 int valorActual = a[i];
+                 int posicion = i - 1;
+ 
+-                System.out.println("iteración " + i + ": insertando " + valorActual);
++                System.out.println("Iteración " + i + ": insertando " + valorActual);
+ 
+                 while (posicion >= 0 && a[posicion] > valorActual) {
+                     a[posicion + 1] = a[posicion];
+                     posicion--;
++                    swaps++;
+                 }
+ 
+                 a[posicion + 1] = valorActual;
+-                System.out.println("luego de insertar: " + arrayToString(a));
++                System.out.println("Salida: " + arrayToString(a));
+             }
+ 
+             System.out.println("Array final: " + arrayToString(a));
++            System.out.println("Total swaps: " + swaps);
+         }
+ 
+         // para mostrar el arreglo de mejor forma
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a1cf139f-5c27-4adc-aff4-aac7186fa65b\" name=\"Changes\" comment=\"cambios\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/Metdos/metodos/SelectionSort.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/Metdos/metodos/SelectionSort.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;RichardC022&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/RichardC022/MetodosDeOrdenacion.git&quot;,\r\n    &quot;accountId&quot;: &quot;459d817c-48ea-41e0-b1e8-c4e232493a64&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"35WEVd08eoM6O4IP6EJ4n40trfF\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,\r\n    &quot;Application.SortingDemo.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Desktop/Metodos de Ordenacion Java/MetodosDeOrdenacion&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Usuario iTC/Desktop/MetodosDeOrdenacion/Metdos/src/Main.java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.SortingDemo\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"UNNAMED_CLASS_CONFIGURATION\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"Metdos\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SortingDemo\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Servicios.SortingDemo\" />\r\n      <module name=\"Metdos\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"Servicios.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.SortingDemo\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a1cf139f-5c27-4adc-aff4-aac7186fa65b\" name=\"Changes\" comment=\"\" />\r\n      <created>1763217452295</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1763217452295</updated>\r\n      <workItem from=\"1763237701745\" duration=\"7820000\" />\r\n      <workItem from=\"1763248403797\" duration=\"266000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Creacion de archivos\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763218399216</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763218399216</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Creacion de archivos\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763218420836</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763218420836</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"cambios\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763218500500</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763218500501</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"cambios\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1763218876435</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1763218876435</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Creacion de archivos\" />\r\n    <MESSAGE value=\"cambios\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cambios\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b4232b91a5ae4fc1d0a7636338784e45eb1921f8)
++++ b/.idea/workspace.xml	(date 1763313930781)
+@@ -7,9 +7,9 @@
+     <list default="true" id="a1cf139f-5c27-4adc-aff4-aac7186fa65b" name="Changes" comment="cambios">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" afterDir="false" />
+@@ -107,14 +107,6 @@
+         <item itemvalue="Application.Main" />
+       </list>
+     </recent_temporary>
+-  </component>
+-  <component name="SharedIndexes">
+-    <attachedChunks>
+-      <set>
+-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+-      </set>
+-    </attachedChunks>
+   </component>
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">

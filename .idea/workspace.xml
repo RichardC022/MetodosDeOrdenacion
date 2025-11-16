@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1cf139f-5c27-4adc-aff4-aac7186fa65b" name="Changes" comment="Creacion de archivos">
+    <list default="true" id="a1cf139f-5c27-4adc-aff4-aac7186fa65b" name="Changes" comment="cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -47,13 +56,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
+    "Application.SortingDemo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Cajas",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/Usuario iTC/Desktop/MetodosDeOrdenacion/Metdos/src/Main.java"
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/Metodos de Ordenacion Java/MetodosDeOrdenacion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Usuario iTC/Desktop/MetodosDeOrdenacion/Metdos/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Application.SortingDemo">
@@ -82,9 +100,18 @@
       <list>
         <item itemvalue="Application.SortingDemo" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.SortingDemo" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,6 +120,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763217452295</updated>
+      <workItem from="1763237701745" duration="7820000" />
+      <workItem from="1763248403797" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion de archivos">
       <option name="closed" value="true" />
@@ -102,34 +131,39 @@
       <option name="project" value="LOCAL" />
       <updated>1763218399216</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creacion de archivos">
+      <option name="closed" value="true" />
+      <created>1763218420836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763218420836</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1763218500500</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763218500501</updated>
+    </task>
+    <task id="LOCAL-00004" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1763218876435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763218876435</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creacion de archivos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de archivos" />
+    <MESSAGE value="cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios" />
   </component>
 </project>
