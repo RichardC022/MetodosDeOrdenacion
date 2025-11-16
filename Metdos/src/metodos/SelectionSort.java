@@ -17,6 +17,11 @@ public final class SelectionSort {
                     minimo = j; //Nuevo minimo
                 }
             }
+
+            if (trace) {
+                System.out.println("Iteración #" + (i+1) + ": Selecionando " + a[minimo]);
+            }
+
             //Compara y reorganiza
             if (minimo != i) {
                  int temp = a[i];
@@ -25,18 +30,28 @@ public final class SelectionSort {
                   swaps++;
             }
 
-             if (trace) {
-            System.out.println("\nIteración #" + (i+1) );
-            imprime(a);
+            if (trace) {
+                System.out.println("Salida: " + arrayToString(a));
             }
+
         }
 
         if(trace){
-             System.out.println("\nTotal Swaps: " + swaps);
+            System.out.println("Array final: " + java.util.Arrays.toString(a));
+            System.out.println("Total Swaps: " + swaps);
         }
     }
-    private static void imprime(int[] a) {
-        for(int n : a) System.out.print(n + " ");
-        System.out.println();
+
+    // para mostrar el arreglo de mejor forma
+    private static String arrayToString(int[] a) {
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < a.length; i++) {
+            sb.append(a[i]);
+            if (i < a.length - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }

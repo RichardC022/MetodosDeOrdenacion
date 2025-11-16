@@ -40,13 +40,10 @@ public class BubbleSort {
                 return;
             }
 
-            //muestra como inicia
-            System.out.println("bubble sort");
-            System.out.println("Array inicial: " + arrayToString(a));
-
             int n = a.length;
             boolean huboIntercambio;
             int pasada = 0;
+            int swaps = 0;
 
             for (int i = 0; i < n - 1; i++) {
                 huboIntercambio = false;
@@ -57,18 +54,20 @@ public class BubbleSort {
                         int temp = a[j];
                         a[j] = a[j + 1];
                         a[j + 1] = temp;
+                        swaps++;
                         huboIntercambio = true;
                     }
                 }
                 //va mostrando como esta haciendo el ordenamiento
-                System.out.println("pasada " + pasada + ": " + arrayToString(a));
+                System.out.println("Pasada #" + pasada + ": " + arrayToString(a));
                 if (!huboIntercambio) {
-                    System.out.println("array ya ordenado");
+                    System.out.println("Array ya ordenado");
                     break;
                 }
             }
 
-            System.out.println("array final: " + arrayToString(a));
+            System.out.println("Array final: " + arrayToString(a));
+            System.out.println("Total swaps: " + swaps);
         }
 
         private static String arrayToString(int[] a) {

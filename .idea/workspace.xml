@@ -7,9 +7,9 @@
     <list default="true" id="a1cf139f-5c27-4adc-aff4-aac7186fa65b" name="Changes" comment="cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" afterDir="false" />
@@ -31,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Cajas" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

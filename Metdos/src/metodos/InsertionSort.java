@@ -36,25 +36,26 @@ public class InsertionSort {
                 return;
             }
 
-            System.out.println("insertion sort");
-            System.out.println("Array inicial: " + arrayToString(a));
+            int swaps = 0;
 
             for (int i = 1; i < a.length; i++) {
                 int valorActual = a[i];
                 int posicion = i - 1;
 
-                System.out.println("iteración " + i + ": insertando " + valorActual);
+                System.out.println("Iteración " + i + ": Insertando " + valorActual);
 
                 while (posicion >= 0 && a[posicion] > valorActual) {
                     a[posicion + 1] = a[posicion];
                     posicion--;
+                    swaps++;
                 }
 
                 a[posicion + 1] = valorActual;
-                System.out.println("luego de insertar: " + arrayToString(a));
+                System.out.println("Salida: " + arrayToString(a));
             }
 
             System.out.println("Array final: " + arrayToString(a));
+            System.out.println("Total swaps: " + swaps);
         }
 
         // para mostrar el arreglo de mejor forma
