@@ -1,5 +1,4 @@
-# Metodos De Ordenacion
-Métodos de ordenación en lenguaje Java 
+# Métodos De Ordenación
 Este es un proyecto Java que implementa tres algoritmos clásicos de ordenación: Insertion Sort, Bubble Sort y Selection Sort. Desarrollado como parte del Taller 5 de Estructura de Datos, incluye un sistema de trazas para visualizar el proceso de ordenación paso a paso. 
 # Características Principales
 Algoritmos Implementados
@@ -18,8 +17,8 @@ Algoritmos Implementados
 # Ejecución Básica
 * Compila y ejecuta la clase principal sortingDemo
 # Decisiones de Diseño 
-Para la resolucion de este taller, se opoto por seguir las siguientes decisiones de diseño: 
-* Crear un paquete llamado metodos
+Para la resolución de este taller, se opoto por seguir las siguientes decisiones de diseño: 
+* Crear un paquete llamado métodos
   En este paquete va la lógica de algoritmos:
    * InsertionSort.java
    * BubbleSort.java
@@ -28,7 +27,7 @@ Para la resolucion de este taller, se opoto por seguir las siguientes decisiones
   En este paquete van las pruebas con las clases:
    * SortingDemo.java
    * SortingUtils.java
-* Realizar la sobrecaraga de metodos sort(array) y sort(array, true) para trazas
+* Realizar la sobrecaraga de métodos sort(array) y sort(array, true) para trazas
 # Flujo de uso
 * El programa ejecuta automáticamente los 3 algoritmos con 5 datasets diferentes
 * Muestra el proceso paso a paso para cada algoritmo
