@@ -2,7 +2,7 @@ package metodos;
 
 import java.util.Arrays;
 
-public class InsertionSort {
+public final class  InsertionSort {
         public static void sort(int[] a) {
             //si el arrego esta vacio o solo tiene un valor
             //no hace nigun ordenamiento

@@ -1,6 +1,6 @@
 package metodos;
 
-public class BubbleSort {
+public final class BubbleSort {
         public static void sort(int[] a) {
             //si el arrego esta vacio o solo tiene un valor
             //no hace nigun ordenamiento
