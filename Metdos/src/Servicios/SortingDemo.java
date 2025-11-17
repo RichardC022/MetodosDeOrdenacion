@@ -12,8 +12,9 @@ public class SortingDemo {
                     {5, 4, 3, 2, 1},  // B
                     {1, 2, 3, 4, 5},  // C
                     {2, 2, 2, 2},     // D
-                    {9, 1, 8, 2},      // E
-                    {3}                 //F
+                    {9, 1, 8, 2},     // E
+                    {3},              //F
+                    {}                //G
             };
 
             System.out.println("Método Insertion sort");
