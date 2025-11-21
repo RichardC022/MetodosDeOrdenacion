@@ -5,30 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1cf139f-5c27-4adc-aff4-aac7186fa65b" name="Changes" comment="cambios">
-      <change afterPath="$PROJECT_DIR$/Metdos/src/Servicios/Bencchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/Servicios/DatasetLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingExperiment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/Servicios/Stats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/DatasetGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/GeneradorCitasCasiOrdenadas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/GeneradorInventario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/GeneradorPacientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/GeneratorCitas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/citas_100.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/citas_100_casi_ordenadas.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/inventario_500_inverso.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/datasets/pacientes_500.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/modelos/Cita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/modelos/ItemInventario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Metdos/src/modelos/Paciente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Metdos/datasets/DatasetGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/Servicios/SortingUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/BubbleSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/metodos/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Metdos/src/modelos/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/Metdos/src/modelos/Cita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingDemo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/Servicios/SortingUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Metdos/datasets/DatasetGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/datasets/DatasetGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/BubbleSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/InsertionSort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Metdos/metodos/SelectionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Metdos/metodos/SelectionSort.class" afterDir="false" />

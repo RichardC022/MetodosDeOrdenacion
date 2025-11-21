@@ -31,10 +31,10 @@ public final class SelectionSort {
 
             //Compara y reorganiza
             if (minimo != i) {
-                 int temp = a[i];
-                 a[i] = a[minimo];
-                 a[minimo] = temp;
-                  swaps++;
+                int temp = a[i];
+                a[i] = a[minimo];
+                a[minimo] = temp;
+                swaps++;
             }
 
             if (trace) {
